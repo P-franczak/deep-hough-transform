@@ -16,7 +16,7 @@ __global__ void helloCUDA(const float *f)
 {
     for(int i = 0; i < 10; ++i)
     {
-        printf("%d ", f[i]);
+        printf("%f ", f[i]);
     }
     printf("\n");
     // printf("Hello thread %d, %d, %d, f=%f\n", threadIdx.x, threadIdx.y, threadIdx.z, f);
@@ -213,10 +213,10 @@ std::vector<torch::Tensor> line_accum_cuda_forward(
 
     // std::cout << imW << " " << imH << " " << channels_size << " " << batch_size << " " << numangle << " " << numrho << std::endl;
     line_accum_forward_kernel<<<blocks, threads>>>(
-        feat.data<float>(),
+        feat.data_ptr<float>(),
         d_tabCos,
         d_tabSin,
-        output.data<float>(),
+        output.data_ptr<float>(),
         imW,
         imH,
         threadW,
@@ -272,12 +272,12 @@ std::vector<torch::Tensor> line_accum_cuda_backward(
     // std::cout << imW << " " << imH << " " << channels_size << " " << batch_size << " " << numangle << " " << numrho << std::endl;
     
     
-    // printf("p = %p\n", grad_outputs.data<float>());
-    // printf("p = %p\n", grad_in.data<float>());
+    // printf("p = %p\n", grad_outputs.data_ptr<float>());
+    // printf("p = %p\n", grad_in.data_ptr<float>());
     
     line_accum_backward_kernel<<<blocks, threads>>>(
-        grad_in.data<float>(),
-        grad_outputs.data<float>(),
+        grad_in.data_ptr<float>(),
+        grad_outputs.data_ptr<float>(),
         d_tabCos,
         d_tabSin,
         imW,
@@ -290,8 +290,8 @@ std::vector<torch::Tensor> line_accum_cuda_backward(
         numangle,
         numrho
     );
-    // printf("p = %p\n", grad_outputs.data<float>());
-    // printf("p = %p\n", grad_in.data<float>());
+    // printf("p = %p\n", grad_outputs.data_ptr<float>());
+    // printf("p = %p\n", grad_in.data_ptr<float>());
     // std::cout << grad_outputs << std::endl;
     // cudaDeviceSynchronize();
     cudaFree(d_tabCos);
