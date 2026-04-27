@@ -1,0 +1,10 @@
+numpy
+scipy
+opencv-python
+scikit-image
+torch>=1.0
+torchvision
+tqdm
+yml
+POT
+deep-hough

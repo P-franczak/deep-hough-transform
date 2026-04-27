@@ -8,7 +8,7 @@ setup(
             'deep_hough_cuda.cpp',
             'deep_hough_cuda_kernel.cu',
         ],
-        extra_compile_args={'cxx': ['-g'], 'nvcc': ['-arch=sm_60']})
+        extra_compile_args={'cxx': ['-g'], 'nvcc': ['-arch=sm_75']})
     ],
     cmdclass={
         'build_ext': BuildExtension
