@@ -92,7 +92,8 @@ def test(test_loader, model, args):
             key_points = torch.sigmoid(key_points)
             ftime += (time.time() - t)
             t = time.time()
-            visualize_save_path = os.path.join(CONFIGS["MISC"]["TMP"], 'visualize_test')
+            # visualize_save_path = os.path.join(CONFIGS["MISC"]["TMP"], 'visualize_test/NKL')
+            visualize_save_path = os.path.join(CONFIGS["MISC"]["TMP"], 'visualize_test/SEL')
             os.makedirs(visualize_save_path, exist_ok=True)
 
             binary_kmap = key_points.squeeze().cpu().numpy() > CONFIGS['MODEL']['THRESHOLD']
