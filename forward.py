@@ -31,7 +31,7 @@ parser.add_argument('--tmp', default="", help='tmp')
 args = parser.parse_args()
 
 assert os.path.isfile(args.config)
-CONFIGS = yaml.safeload(open(args.config))
+CONFIGS = yaml.safe_load(open(args.config))
 
 # merge configs
 if args.tmp != "" and args.tmp != CONFIGS["MISC"]["TMP"]:
@@ -50,7 +50,7 @@ def main():
     if args.model:
         if isfile(args.model):
             logger.info("=> loading pretrained model '{}'".format(args.model))
-            checkpoint = torch.load(args.model)
+            checkpoint = torch.load(args.model, weights_only=False)
             if 'state_dict' in checkpoint.keys():
                 model.load_state_dict(checkpoint['state_dict'])
             else:
