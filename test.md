@@ -1,6 +1,8 @@
-## test the NKL dataset with pretrained model
+# Test the NKL dataset with pretrained model
+
 THe results on NKL dataset can be reproduced with following commands:
-```
+
+```(bash)
 git clone https://github.com/Hanqer/deep-hough-transform.git
 cd deep-hough-transform/
 wget http://data.kaizhao.net/projects/deep-hough-transform/NKL.zip

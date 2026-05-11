@@ -60,9 +60,9 @@ print('Mean P:', total_precision.mean())
 print('Mean R:', total_recall.mean())
 print('Mean F:', f.mean()) 
 print('F@0.95:', f[94])
-np.savetxt('precision.csv', total_precision)
-np.savetxt('recall.csv', total_recall)
-np.savetxt('fscore.csv', f)
+# np.savetxt('precision.csv', total_precision)
+# np.savetxt('recall.csv', total_recall)
+# np.savetxt('fscore.csv', f)
 
 
 if arg.align:
@@ -70,7 +70,7 @@ if arg.align:
     print('Mean R_align:', total_recall_align.mean())
     print('Mean F_align:', f_align.mean()) 
     print('F_align@0.95:', f_align[94])
-    np.savetxt('total_precision_refine.csv', total_precision_align)
-    np.savetxt('total_recall_refine.csv', total_recall_align)
-    np.savetxt('total_f_refine.csv', f_align)
+    # np.savetxt('total_precision_refine.csv', total_precision_align)
+    # np.savetxt('total_recall_refine.csv', total_recall_align)
+    # np.savetxt('total_f_refine.csv', f_align)
 

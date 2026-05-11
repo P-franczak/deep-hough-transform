@@ -1,2 +1,9 @@
 DHT_VENV
 data
+__pycache__
+*.pth
+*.7z
+result
+results
+chamfer_distance
+model
