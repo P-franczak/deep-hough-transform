@@ -102,7 +102,7 @@ def reverse_mapping(point_list, numAngle, numRho, size=(32, 32)):
 def visulize_mapping(b_points, size, filename):
     if CONFIGS["DATA"]["DATASET"] == "NKL":
         img = cv2.imread(os.path.join("./data/NKL", filename))
-    if CONFIGS["DATA"]["DATASET"] == "SEL":
+    elif CONFIGS["DATA"]["DATASET"] == "SEL":
         img = cv2.imread(os.path.join("./data/SEL_dataset/test_image/", filename))
     img = cv2.resize(img, size)
     for y1, x1, y2, x2 in b_points:

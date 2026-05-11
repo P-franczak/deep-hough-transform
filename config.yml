@@ -1,4 +1,5 @@
 DATA:
+  PLATFORM: 'CPU'
   # DATASET: 'NKL'
   # DIR: 'data/training/'
   # VAL_DIR: 'data/training/'
