@@ -98,10 +98,7 @@ def test(test_loader, model, args):
             t = time.time()
             images, names, size = data
 
-            if torch.cuda.is_available():
-                images = images.cuda(device=CONFIGS["TRAIN"]["GPU_ID"])
-            else:
-                images = images.to(device)
+            images = images.to(device)
             # size = (size[0].item(), size[1].item())
             key_points = model(images)
 
