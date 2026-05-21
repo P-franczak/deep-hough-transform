@@ -193,6 +193,16 @@ python data/prepare_data_NKL.py
   --fixsize 400
 ```
 
+For TUSimple:
+
+```sh
+python data/prepare_data_TUSimple.py
+  --root './data/archive/TUSimple/train_set' 
+  --json './data/archive/TUSimple/train_set/label_data_0601.json' 
+  --save-dir './data/training/TUSimple_resize_100_100' 
+  --fixsize 400
+```
+
 ### Train
 
 ```sh
