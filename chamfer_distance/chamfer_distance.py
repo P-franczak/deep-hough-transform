@@ -2,13 +2,6 @@ import os
 import torch
 from torch.utils.cpp_extension import load
 
-cd = load(
-    name="cd",
-    sources=[
-        "chamfer_distance/chamfer_distance.cpp",
-        "chamfer_distance/chamfer_distance.cu",
-    ],
-)
 
 import argparse
 import yaml
@@ -22,6 +15,13 @@ assert os.path.isfile(args.config)
 CONFIGS = yaml.safe_load(open(args.config))
 
 if CONFIGS["DATA"]["PLATFORM"] == "Colab":
+    cd = load(
+        name="cd",
+        sources=[
+            "chamfer_distance/chamfer_distance.cpp",
+            "chamfer_distance/chamfer_distance.cu",
+        ],
+    )
 
     class ChamferDistanceFunction(torch.autograd.Function):
         @staticmethod

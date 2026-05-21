@@ -10,13 +10,13 @@ from basic_ops import *
 import argparse
 import yaml
 
-parser = argparse.ArgumentParser(description="PyTorch Semantic-Line Training")
-# arguments from command line
-parser.add_argument("--config", default="./config.yml", help="path to config file")
-args = parser.parse_args()
+# parser = argparse.ArgumentParser(description="PyTorch Semantic-Line Training")
+# # arguments from command line
+# parser.add_argument("--config", default="./config.yml", help="path to config file")
+# args = parser.parse_args()
 
-assert os.path.isfile(args.config)
-CONFIGS = yaml.safe_load(open(args.config))
+assert os.path.isfile("./config.yml")
+CONFIGS = yaml.safe_load(open("./config.yml"))
 
 
 def draw_line(y, x, angle, image, color=(0, 0, 255), num_directions=24):

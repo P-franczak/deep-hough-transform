@@ -1,5 +1,6 @@
 DATA:
   PLATFORM: 'CPU'
+  # PLATFORM: 'Colab'
   # DATASET: 'NKL'
   # DIR: 'data/training/'
   # VAL_DIR: 'data/training/'
@@ -7,14 +8,26 @@ DATA:
   # LABEL_FILE: 'data/training/nkl_train.txt'
   # VAL_LABEL_FILE: 'data/training/nkl_val.txt'
   # TEST_LABEL_FILE: 'data/training/nkl_test.txt'
-  DATASET: 'SEL'
+
+  ## -----------------------------
+  
+  # DATASET: 'SEL'
+  # DIR: 'data/training/'
+  # VAL_DIR: 'data/training/'
+  # TEST_DIR: 'data/'
+  # LABEL_FILE: 'data/training/train_1716_100_100.txt'
+  # VAL_LABEL_FILE: 'data/training/test_1716_100_100.txt'
+  # TEST_LABEL_FILE: 'data/sel_test.txt'
+  
+  ## -----------------------------
+  
+  DATASET: 'TUSimple'
   DIR: 'data/training/'
   VAL_DIR: 'data/training/'
-  TEST_DIR: 'data/'
-  LABEL_FILE: 'data/training/train_1716_100_100.txt'
-  VAL_LABEL_FILE: 'data/training/test_1716_100_100.txt'
-  # TEST_LABEL_FILE: "data/training/test_1716_100_100.txt"
-  TEST_LABEL_FILE: 'data/sel_test.txt'
+  # TEST_DIR: 'data/'
+  LABEL_FILE: 'data/training/TUSimple_train.txt'
+  VAL_LABEL_FILE: 'data/training/TUSimple_val.txt'
+  # TEST_LABEL_FILE: 'data/sel_test.txt'
   BATCH_SIZE: 1
   WORKERS: 2
 
