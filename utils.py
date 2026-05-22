@@ -104,6 +104,10 @@ def visulize_mapping(b_points, size, filename):
         img = cv2.imread(os.path.join("./data/NKL", filename))
     elif CONFIGS["DATA"]["DATASET"] == "SEL":
         img = cv2.imread(os.path.join("./data/SEL_dataset/test_image/", filename))
+    elif CONFIGS["DATA"]["DATASET"] == "TUSimple":
+        img = cv2.imread(
+            os.path.join("./data/training/TUSimple_resize_100_100/", filename)
+        )
     img = cv2.resize(img, size)
     for y1, x1, y2, x2 in b_points:
         img = cv2.line(
@@ -162,7 +166,7 @@ def get_density(filename, x1, y1, x2, y2):
     hed = np.array(Image.open(hed_file_path).convert("L")) / 255
 
     mask = np.zeros_like(hed)
-    mask = cv2.line(mask, (x1, y1), (x2, y2), color=1.0, thickness=7)
+    mask = cv2.line(mask, (x1, y1), (x2, y2), color=1.0, thickness=2)
 
     density = (mask * hed).sum() / mask.sum()
     return density
@@ -183,7 +187,7 @@ def overflow(x, size=400):
     return x < 0 or x >= size
 
 
-def edge_align(coords, filename, size, division=9):
+def edge_align(coords, filename, size=(400, 400), division=9):
     y1, x1, y2, x2 = coords
     ry1, rx1, ry2, rx2 = y1, x1, y2, x2
     if (

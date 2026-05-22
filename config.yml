@@ -22,13 +22,13 @@ DATA:
   ## -----------------------------
   
   DATASET: 'TUSimple'
-  DIR: 'data/training/'
-  VAL_DIR: 'data/training/'
-  # TEST_DIR: 'data/'
+  DIR: 'data/training/TUSimple_resize_100_100/'
+  VAL_DIR: 'data/training/TUSimple_resize_100_100/'
+  TEST_DIR: 'data/training/TUSimple_resize_100_100/'
   LABEL_FILE: 'data/training/TUSimple_train.txt'
   VAL_LABEL_FILE: 'data/training/TUSimple_val.txt'
-  # TEST_LABEL_FILE: 'data/sel_test.txt'
-  BATCH_SIZE: 1
+  TEST_LABEL_FILE: 'data/training/TUSimple_test.txt'
+  BATCH_SIZE: 64
   WORKERS: 2
 
 OPTIMIZER:

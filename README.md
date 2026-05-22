@@ -198,7 +198,6 @@ For TUSimple:
 ```sh
 python data/prepare_data_TUSimple.py
   --root './data/archive/TUSimple/train_set' 
-  --json './data/archive/TUSimple/train_set/label_data_0601.json' 
   --save-dir './data/training/TUSimple_resize_100_100' 
   --fixsize 400
 ```
@@ -212,7 +211,7 @@ python train.py
 ### Run inference
 
 ```sh
-python forward.py --model model_best_sel.pth --tmp ./result/reproduce
+python forward.py --model model_best.pth --tmp ./results/
 ```
 
 ### Evaluate predictions
